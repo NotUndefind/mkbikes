@@ -1,0 +1,10 @@
+@import "../../../assets/styles/variables.scss";
+
+.noticeCards {
+	display: flex;
+	flex-direction: row;
+	overflow: scroll;
+	gap: 1rem;
+	margin-bottom: 1rem;
+	align-items: start;
+}

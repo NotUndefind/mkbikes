@@ -1,0 +1,63 @@
+@import "../../../assets/styles/variables.scss";
+
+footer {
+	text-align: start;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	gap: 2.5rem;
+	background: $color-primary;
+	border-top: 1px solid $color-accent;
+	padding: 2.5rem 0;
+
+	.newsletter {
+		form {
+			display: flex;
+			flex-direction: row;
+
+			input {
+				border-radius: 10px 0 0 10px;
+			}
+
+			button {
+				border-radius: 0 10px 10px 0;
+			}
+
+			button:hover {
+				border-radius: 0 10px 10px 0;
+			}
+		}
+	}
+
+	.sections {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 2.5rem;
+	}
+
+	.logos {
+		display: flex;
+		flex-direction: column;
+		gap: 1.25rem;
+		align-items: center;
+
+		.bigLogo {
+			max-width: 4.5rem;
+		}
+
+		.networks {
+			display: flex;
+			gap: 1.25rem;
+
+			.logo {
+				width: 2.5rem;
+			}
+		}
+	}
+
+	a {
+		@include fontText(normal, 16px, $color-accent);
+		text-decoration: underline;
+	}
+}

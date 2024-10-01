@@ -1,0 +1,121 @@
+//Import de la police des textes
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+//Import de la polices des titres
+@font-face {
+	font-family: "Gonzi Expanded PERSONAL USE";
+	src: url(../assets/fonts/GonziExpandedPERSONALUSE-Regular.otf) format("otf");
+}
+
+//Variables
+$color-primary: #1d1d1c;
+$color-secondary: #e7cd1c;
+$color-accent: #ffffff;
+
+//Mixins
+@mixin fontTitle($style, $size, $color) {
+	font-family: "Gonzi Expanded PERSONAL USE", sans-serif;
+	font-style: $style;
+	font-size: $size;
+	color: $color;
+}
+
+@mixin fontText($style, $size, $color) {
+	font-family: "Montserrat", sans-serif;
+	font-style: $style;
+	font-size: $size;
+	color: $color;
+}
+
+@mixin customShadow($size) {
+	background: $color-accent;
+	box-shadow: 0px 104px 29px 0px rgba(0, 0, 0, 0),
+		0px 67px 27px 0px rgba(0, 0, 0, 0.01),
+		0px 38px 23px 0px rgba(0, 0, 0, 0.05),
+		0px 17px 17px 0px rgba(0, 0, 0, 0.09),
+		0px 4px 9px 0px rgba(0, 0, 0, 0.1);
+}
+
+//Classes
+.h1 {
+	@include fontTitle(normal, 72px, $color-accent);
+}
+
+.h2 {
+	@include fontTitle(normal, 60px, $color-accent);
+}
+
+.h3 {
+	@include fontTitle(normal, 48px, $color-accent);
+}
+
+.h4 {
+	@include fontTitle(normal, 36px, $color-accent);
+}
+
+.h5 {
+	@include fontTitle(normal, 30px, $color-accent);
+}
+
+.h6 {
+	@include fontTitle(normal, 24px, $color-accent);
+}
+
+.text {
+	@include fontText(normal, 16px, $color-accent);
+}
+
+.btn-primary {
+	@include fontText(normal, 16px, $color-primary);
+	border: solid, 1px, $color-primary;
+	background: $color-accent;
+	border-radius: 10px;
+	padding: 5px;
+	display: flex;
+	align-items: center;
+	transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+	@include fontText(normal, 16px, $color-primary);
+	border: solid, 1px, $color-primary;
+	background: $color-secondary;
+	border-radius: 10px;
+	padding: 5px;
+	display: flex;
+	align-items: center;
+	transition: all 0.3s ease;
+}
+
+.btn-secondary {
+	@include fontText(normal, 16px, $color-accent);
+	border: solid, 1px, $color-accent;
+	background: $color-primary;
+	border-radius: 10px;
+	padding: 5px;
+	display: flex;
+	align-items: center;
+	transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+	@include fontText(normal, 16px, $color-primary);
+	border: solid, 1px, $color-primary;
+	background: $color-secondary;
+	border-radius: 10px;
+	padding: 5px;
+	display: flex;
+	align-items: center;
+	transition: all 0.3s ease;
+}
+
+.input-primary {
+	@include fontText(normal, 16px, $color-primary);
+	border: solid, 1px, $color-primary;
+	background: $color-accent;
+	border-radius: 10px;
+	padding: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

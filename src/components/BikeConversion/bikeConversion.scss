@@ -1,0 +1,29 @@
+@import "../../assets/styles/variables.scss";
+
+.bikeConversion {
+	background-color: $color-primary;
+	text-align: center;
+
+	.content {
+		h1 {
+			color: $color-accent;
+		}
+
+		.bikeConversionDesc {
+			color: $color-accent;
+		}
+
+		.bikeConversionCards {
+			margin-top: 1rem;
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+
+			gap: 1rem;
+		}
+
+		.takeAppointment {
+			margin: auto;
+		}
+	}
+}

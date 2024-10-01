@@ -1,0 +1,33 @@
+@import "../../../assets/styles/variables.scss";
+
+.noticeCard {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	margin-top: 1rem;
+	background-color: $color-primary;
+	border-radius: 1rem;
+	text-align: start;
+	padding: 1rem;
+	max-width: 250px;
+	min-width: 250px;
+	width: 100%;
+	border: 1px solid $color-accent;
+
+	.stars {
+		display: flex;
+		gap: 0.5rem;
+	}
+
+	p {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	.active {
+		white-space: inherit;
+		overflow: inherit;
+		text-overflow: inherit;
+	}
+}

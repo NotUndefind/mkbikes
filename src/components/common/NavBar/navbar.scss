@@ -1,0 +1,125 @@
+@import "../../../assets/styles/variables.scss";
+nav {
+	margin-bottom: 2rem;
+	.banner {
+		position: relative;
+		text-align: center;
+		max-height: 450px;
+		height: 100%;
+	}
+
+	.routes {
+		//Style de la navBar
+		background: $color-primary !important;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		padding: 1rem 0;
+		@include customShadow(0);
+		@include fontText(normal, 18px, $color-accent);
+
+		.logo {
+			max-width: 4rem;
+			order: 1;
+		}
+
+		.sections {
+			display: flex;
+			justify-content: space-evenly;
+			order: 2;
+			text-decoration: underline;
+			width: 80%;
+
+			.bikeConversion {
+				span {
+					display: block;
+					text-decoration: underline;
+					@include fontText(normal, 12px, $color-accent);
+				}
+			}
+		}
+
+		.loginButtons {
+			display: flex;
+			gap: 1rem;
+			order: 3;
+		}
+
+		.burgerMenu {
+			display: none;
+		}
+
+		.profileButton {
+			display: none;
+			button {
+				border: none;
+				background-color: transparent;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	nav {
+		.routes {
+			justify-content: center;
+			row-gap: 2rem;
+			column-gap: 4rem;
+			flex-wrap: wrap;
+
+			.burgerMenu {
+				display: flex;
+				align-items: center;
+				order: 3;
+
+				button {
+					border: none;
+					background-color: transparent;
+				}
+			}
+
+			.sections {
+				display: none;
+				order: 6;
+			}
+
+			.buttons {
+				display: flex;
+				flex-direction: row-reverse;
+				align-items: center;
+			}
+
+			.active {
+				display: flex !important;
+
+				order: 5;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 576px) {
+	nav {
+		.routes {
+			.loginButtons {
+				display: none;
+
+				order: 5;
+			}
+
+			.profileButton {
+				display: flex;
+				align-items: center;
+				order: 3;
+			}
+
+			.burgerMenu {
+				order: 4;
+			}
+
+			.sections {
+				gap: 1rem;
+			}
+		}
+	}
+}

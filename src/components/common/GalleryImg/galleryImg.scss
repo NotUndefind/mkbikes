@@ -1,0 +1,21 @@
+@import "../../../assets/styles/variables.scss";
+
+.galleryImgCards {
+	margin-top: 1rem;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 1rem;
+
+	.card {
+		img {
+			max-width: 250px;
+			width: 100%;
+			max-height: fit-content;
+			height: 100%;
+			object-fit: cover;
+			border-radius: 10px;
+			@include customShadow(1rem);
+		}
+	}
+}

@@ -1,0 +1,30 @@
+/* Remettre à zéro les styles de base */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	height: 100%;
+	font-family: sans-serif; /* Changez selon votre police préférée */
+}
+
+/* Supprimer la liste à puces */
+ul,
+ol {
+	list-style: none;
+}
+
+/* Réinitialiser les styles des liens */
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* Réinitialiser les images pour qu'elles ne dépassent pas leurs conteneurs */
+img {
+	max-width: 100%;
+	height: auto;
+}

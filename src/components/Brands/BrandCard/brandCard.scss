@@ -1,0 +1,30 @@
+@import "../../../assets/styles/variables.scss";
+
+.brandCard {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	border: solid 1px $color-primary;
+	border-radius: 1rem;
+	padding: 1rem;
+
+	.brandImg {
+		max-width: 250px;
+		width: 100%;
+		max-height: 250px;
+		height: 100%;
+		img {
+			border-radius: 10px;
+		}
+	}
+
+	.brandDescription {
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		justify-content: center;
+		align-items: center;
+	}
+}
