@@ -1,15 +1,12 @@
 @import "../../assets/styles/variables.scss";
 
-.bikeConversion {
+.news {
 	background-color: $color-secondary;
 	text-align: center;
 
 	.content {
-		background-color: $color-primary;
+		background: $color-primary;
 		border-radius: 1rem;
 		padding: 1rem;
-		.explTransformation {
-			margin: 1rem;
-		}
 	}
 }

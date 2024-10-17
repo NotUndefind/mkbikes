@@ -1,8 +1,12 @@
 // Styles
 import "./contact.scss";
 
-// UseState
+// React
 import { useForm } from "react-hook-form";
+import { useState } from "react";
+
+//Axios
+import axios from "axios";
 
 //Interface
 interface FormData {
@@ -21,20 +25,52 @@ export default function Contact() {
 		formState: { errors },
 	} = useForm<FormData>();
 
+	const [msgSuccess, setMsgSuccess] = useState<string | null>(null);
+	const [msgError, setMsgError] = useState<string | null>(null);
+
 	const onSubmit = (data: FormData) => {
 		const name = data.name?.trim();
 		const firstname = data.firstname?.trim();
 		const email = data.email?.trim();
 		const subject = data.subject?.trim();
 		const message = data.message?.trim();
-		console.log(name, firstname, email, subject, message);
-		reset();
+
+		axios
+			.post("http://localhost:8000/api/mail/send", {
+				name,
+				firstname,
+				email,
+				subject,
+				message,
+			})
+			.then((response) => {
+				console.log(response);
+				setMsgSuccess("Votre message a bien été envoyé");
+				setTimeout(() => {
+					setMsgSuccess(null);
+				}, 3000);
+				reset();
+			})
+			.catch((error) => {
+				setMsgError(error.response.data.error);
+				setTimeout(() => {
+					setMsgError(null);
+				}, 4000);
+			});
 	};
 
 	return (
 		<div className="contact">
 			<div className="content">
 				<h2 className="h2">Contact</h2>
+
+				<div className={`mailSuccess ${msgSuccess ? "show" : ""}`}>
+					<p>{msgSuccess}</p>
+				</div>
+
+				<div className={`mailError ${msgError ? "show" : ""}`}>
+					<p>{msgError}</p>
+				</div>
 
 				<form onSubmit={handleSubmit(onSubmit)}>
 					<div className="allName">

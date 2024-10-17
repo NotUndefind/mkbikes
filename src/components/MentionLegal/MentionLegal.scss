@@ -1,6 +1,6 @@
 @import "../../assets/styles/variables.scss";
 
-.bikeConversion {
+.mentionLegal {
 	background-color: $color-secondary;
 	text-align: center;
 
@@ -8,8 +8,16 @@
 		background-color: $color-primary;
 		border-radius: 1rem;
 		padding: 1rem;
-		.explTransformation {
-			margin: 1rem;
+		h1 {
+			font-size: xx-large;
+		}
+
+		.credit {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 1rem;
+			align-items: start;
+			text-align: start;
 		}
 	}
 }

@@ -1,13 +1,53 @@
 @import "../../../assets/styles/variables.scss";
 
 .brandCard {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	align-items: center;
-	border: solid 1px $color-primary;
+	background-image: url(../../../assets/img/test2.jpg);
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	background-color: rgba(0, 0, 0, 0.714);
+	background-blend-mode: overlay;
+
 	border-radius: 1rem;
 	padding: 1rem;
+	.brand {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		gap: 1rem;
+		.imgs {
+			display: flex;
+			flex-direction: column;
+
+			.logo {
+				margin: 1rem;
+				max-width: 8rem;
+			}
+
+			.actionImg {
+				max-width: 25rem;
+				margin: auto 1rem;
+				img {
+					border-radius: 1rem;
+				}
+			}
+		}
+
+		.text {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			gap: 2rem;
+
+			.title {
+				margin: 1rem;
+			}
+
+			.descr {
+				margin: 2rem 0 3rem 0;
+			}
+		}
+	}
 
 	.brandImg {
 		max-width: 250px;
@@ -26,5 +66,9 @@
 		gap: 1rem;
 		justify-content: center;
 		align-items: center;
+	}
+
+	button {
+		margin: auto;
 	}
 }

@@ -25,6 +25,7 @@ $color-accent: #ffffff;
 	font-style: $style;
 	font-size: $size;
 	color: $color;
+	line-height: 1.5rem;
 }
 
 @mixin customShadow($size) {
@@ -118,4 +119,41 @@ $color-accent: #ffffff;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+.mailError {
+	position: fixed;
+	@include fontText(normal, 16px, rgb(255, 106, 106));
+	border: 1px solid rgb(255, 106, 106);
+	background: $color-primary;
+	border: 1px solid #989898;
+	border-radius: 1rem;
+	padding: 1rem 2rem;
+	top: -10%;
+	left: 50%;
+	transition: top 0.6s ease, opacity 0.6s ease;
+	transform: translateX(-50%);
+	z-index: 10;
+	opacity: 0;
+}
+
+.mailSuccess {
+	position: fixed;
+	@include fontText(normal, 16px, rgb(149, 255, 149));
+	border: 1px solid rgb(121, 194, 121);
+	background: $color-primary;
+	border-radius: 1rem;
+	padding: 1rem 2rem;
+	top: -10%;
+	left: 50%;
+	transition: top 0.6s ease, opacity 0.6s ease;
+	transform: translateX(-50%);
+	z-index: 10;
+	opacity: 0;
+}
+
+.mailSuccess.show,
+.mailError.show {
+	opacity: 1;
+	top: 10%;
 }

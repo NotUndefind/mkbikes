@@ -10,22 +10,16 @@ import "../../../assets/styles/main.scss";
 import logo from "../../../assets/img/logo.png";
 import burgerMenuClose from "../../../assets/img/burgerMenuClose.svg";
 import burgerMenuOpen from "../../../assets/img/burgerMenuOpen.svg";
-import profile from "../../../assets/img/profile.svg";
 import banner from "../../../assets/img/banner.png";
 
 export default function NavBar() {
 	//States
 	const [isMenuActive, setIsMenuActive] = useState(false);
-	const [isLoginActive, setIsLoginActive] = useState(false);
 
 	const imgRef = useRef<HTMLImageElement>(null);
 
 	const toggleMenu = (): void => {
 		setIsMenuActive(!isMenuActive);
-	};
-
-	const toggleLogin = (): void => {
-		setIsLoginActive(!isLoginActive);
 	};
 
 	//HTML
@@ -42,34 +36,28 @@ export default function NavBar() {
 					</Link>
 				</div>
 				<div className={"sections" + (isMenuActive ? " active" : "")}>
-					<div>
-						<Link to={"/"}>Reparation</Link>
+					<div className="btn-primary">
+						<Link to={"/repair"}>Reparation</Link>
 					</div>
-					<div className="bikeConversion">
+					<div className="btn-primary">
 						<Link to={"/bike-conversion"}>
-							Transformation
-							<span>Vélos musculaire</span>
+							Transformation vélos musculaire
 						</Link>
 					</div>
-					<div>
+					<div className="btn-primary">
 						<Link to={"/rental"}>Location</Link>
 					</div>
-					<div>
+					<div className="btn-primary">
 						<Link to={"/brands"}>Les marques</Link>
 					</div>
-				</div>
-				<div
-					className={
-						"loginButtons" + (isLoginActive ? " active" : "")
-					}
-				>
-					<button className="btn-primary">
-						<Link to={"/signup"}>S'inscrire</Link>
-					</button>
 
-					<button className="btn-secondary">
-						<Link to="/login">Se connecter</Link>
-					</button>
+					<div className="btn-primary">
+						<Link to={"/bike-used"}>Vélos d'occasion</Link>
+					</div>
+
+					<div className="btn-primary">
+						<Link to={"/news"}>Actus</Link>
+					</div>
 				</div>
 				<div className="burgerMenu">
 					<button onClick={toggleMenu}>
@@ -81,11 +69,6 @@ export default function NavBar() {
 							alt="Menu"
 							className="burgerMenuImg"
 						/>
-					</button>
-				</div>
-				<div className="profileButton">
-					<button onClick={toggleLogin}>
-						<img src={profile} alt="" />
 					</button>
 				</div>
 			</div>

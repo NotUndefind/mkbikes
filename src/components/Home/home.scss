@@ -1,3 +1,17 @@
 .home {
-	background-color: #1d1d1c;
+	background-color: #e7cd1c;
+
+	.content {
+		background-color: #1d1d1c;
+		border-radius: 1rem;
+		padding: 1rem;
+
+		img {
+			border-radius: 1rem;
+		}
+
+		h1 {
+			font-size: xx-large;
+		}
+	}
 }

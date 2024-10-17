@@ -1,8 +1,14 @@
 @import "../../../assets/styles/variables.scss";
 
-.heroHeader {
+.about {
 	text-align: center;
 	position: relative;
 	display: grid;
 	grid-template-columns: 10fr 2fr;
+	align-items: end;
+	.presentationText {
+		p {
+			margin: 1rem 0;
+		}
+	}
 }

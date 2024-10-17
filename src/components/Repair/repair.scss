@@ -1,6 +1,6 @@
 @import "../../assets/styles/variables.scss";
 
-.bikeConversion {
+.repair {
 	background-color: $color-secondary;
 	text-align: center;
 
@@ -8,7 +8,7 @@
 		background-color: $color-primary;
 		border-radius: 1rem;
 		padding: 1rem;
-		.explTransformation {
+		.repairDesc {
 			margin: 1rem;
 		}
 	}

@@ -2,12 +2,14 @@
 import NavBar from "../common/NavBar/NavBar";
 import Footer from "../common/Footer/Footer";
 import HeroHeader from "./About/About";
-import NoticeCards from "../common/NoticeCards/NoticeCards";
 
 import Contact from "../common/Contact/Contact";
 
 //Syles
 import "./home.scss";
+
+//images
+import homeDownPres from "../../assets/img/homeDown (Optimized).jpeg";
 export default function Home() {
 	return (
 		<div className="home">
@@ -15,7 +17,7 @@ export default function Home() {
 			<div className="content">
 				<HeroHeader />
 
-				<NoticeCards />
+				<img src={homeDownPres} alt="" />
 
 				<Contact />
 			</div>

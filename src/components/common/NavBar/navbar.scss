@@ -27,16 +27,7 @@ nav {
 			display: flex;
 			justify-content: space-evenly;
 			order: 2;
-			text-decoration: underline;
 			width: 80%;
-
-			.bikeConversion {
-				span {
-					display: block;
-					text-decoration: underline;
-					@include fontText(normal, 12px, $color-accent);
-				}
-			}
 		}
 
 		.loginButtons {

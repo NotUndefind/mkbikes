@@ -9,6 +9,10 @@ import logo from "../../../assets/img/logo.png";
 
 //React
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
+//Axios
+import axios from "axios";
 
 export default function Footer() {
 	const [msgErro, setMsgError] = useState<string | null>(null);
@@ -33,9 +37,18 @@ export default function Footer() {
 			return;
 		}
 
-		console.log("ok");
+		axios
+			.post("http://localhost:8000/api/newsletter/subscribe", {
+				email,
+			})
+			.then((response) => {
+				setMsgError(response.data.message);
+			})
+			.catch((error) => {
+				setMsgError(error.response.data.message);
+			});
+
 		(document.querySelector(".newsletterForm") as HTMLFormElement)?.reset();
-		setMsgError(null);
 	};
 
 	return (
@@ -66,57 +79,9 @@ export default function Footer() {
 			</div>
 
 			<div className="sections">
-				<div className="help section">
-					<h6 className="h6">Help</h6>
-					<ul>
-						<li>
-							<a href="">Contact</a>
-						</li>
-
-						<li>
-							<a href="">F.A.Q</a>
-						</li>
-					</ul>
-				</div>
-
-				<div className="catalog section">
-					<h6 className="h6">Catalogue</h6>
-
-					<ul>
-						<li>
-							<a href="">Catalogue de vélos</a>
-						</li>
-						<li>
-							<a href="">Catalogue de piece</a>
-						</li>
-					</ul>
-				</div>
-				<div className="services section">
-					<h6 className="h6">Services</h6>
-					<ul>
-						<li>
-							<a href="">Location</a>
-						</li>
-
-						<li>
-							<a href="">Transfomation</a>
-						</li>
-
-						<li>
-							<a href="">Réparation de vélo éléctrique</a>
-						</li>
-
-						<li>
-							<a href="">Réparation de vélo musculaire</a>
-						</li>
-					</ul>
-				</div>
-
-				<div className="localisation section">
-					<a href="">
-						<h6 className="h6">Localisation</h6>
-					</a>
-				</div>
+				<Link to={"/mentions-legales"}>
+					<h6 className="h6">Mentions légales</h6>
+				</Link>
 			</div>
 
 			<div className="logos">

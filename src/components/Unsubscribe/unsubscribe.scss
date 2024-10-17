@@ -1,6 +1,6 @@
 @import "../../assets/styles/variables.scss";
 
-.bikeConversion {
+.unsubscribe {
 	background-color: $color-secondary;
 	text-align: center;
 
@@ -8,8 +8,10 @@
 		background-color: $color-primary;
 		border-radius: 1rem;
 		padding: 1rem;
-		.explTransformation {
-			margin: 1rem;
+
+		img {
+			border-radius: 1rem;
+			max-width: 20%;
 		}
 	}
 }

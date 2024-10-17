@@ -1,30 +1,46 @@
 //Components
 import { Link } from "react-router-dom";
 
-import image from "../../../assets/img/test2.jpg";
-
 //Styles
 import "./brandCard.scss";
 
 export default function BrandCard(props: {
 	brandName: string;
-	children: React.ReactNode;
-	path: string;
+	description: string;
+	pathToWebsite: string;
+	logoImg: string;
+	actionImg: string;
+	backgroundImg: string;
 }) {
 	return (
-		<div className="brandCard">
-			<div className="brandImg">
-				<img src={image} alt="" />
-			</div>
+		<div
+			className="brandCard"
+			style={{ backgroundImage: `url(${props.backgroundImg})` }}
+		>
+			<div className="brand">
+				<div className="imgs">
+					<div className="logo">
+						<img src={props.logoImg} alt="" />
+					</div>
 
-			<div className="brandDescription">
-				<h4 className="h4">{props.brandName}</h4>
-				<p className="text desciption">{props.children}</p>
+					<div className="actionImg">
+						<img src={props.actionImg} alt="" />
+					</div>
+				</div>
 
-				<button className="btn-secondary">
-					<Link to={props.path}>En savoir plus</Link>
-				</button>
+				<div className="text">
+					<div className="title">
+						<h3 className="h3">{props.brandName}</h3>
+					</div>
+
+					<div className="descr">
+						<p className="text">{props.description}</p>
+					</div>
+				</div>
 			</div>
+			<button className="btn-primary">
+				<Link to={props.pathToWebsite}>En savoir plus</Link>
+			</button>
 		</div>
 	);
 }

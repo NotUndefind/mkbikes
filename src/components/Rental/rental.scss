@@ -1,6 +1,15 @@
 @import "../../assets/styles/variables.scss";
 
 .rental {
-	background-color: $color-primary;
+	background-color: $color-secondary;
 	text-align: center;
+
+	.content {
+		background-color: $color-primary;
+		border-radius: 1rem;
+		padding: 1rem;
+		.rentalDesc {
+			margin: 1rem;
+		}
+	}
 }
